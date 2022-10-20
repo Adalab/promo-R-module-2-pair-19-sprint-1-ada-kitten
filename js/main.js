@@ -57,6 +57,29 @@ const kittenThree =
   kittenThreeDesc +
   "</p></li>";
 
-dataList.innerHTML += kittenOne;
-dataList.innerHTML += kittenTwo;
-dataList.innerHTML += kittenThree;
+//dataList.innerHTML += kittenOne;
+//dataList.innerHTML += kittenTwo;
+//dataList.innerHTML += kittenThree;
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+
+input_search_desc.value = 'tranquilo';
+
+const descrSearchText = input_search_desc.value;
+
+
+if( kittenOneDesc.includes(descrSearchText) ) {
+  dataList.innerHTML += kittenOne;
+  } 
+  
+  
+  if( kittenTwoDesc.includes(descrSearchText) ) {
+    dataList.innerHTML += kittenTwo;
+  }
+  
+  
+  if( kittenThreeDesc.includes(descrSearchText) ) {
+    dataList.innerHTML += kittenThree;
+  }  
+
+

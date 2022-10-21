@@ -61,25 +61,47 @@ const kittenThree =
 //dataList.innerHTML += kittenTwo;
 //dataList.innerHTML += kittenThree;
 
-const input_search_desc = document.querySelector('.js_in_search_desc');
+const input_search_desc = document.querySelector(".js_in_search_desc");
 
-input_search_desc.value = 'tranquilo';
+input_search_desc.value = "tranquilo";
 
 const descrSearchText = input_search_desc.value;
 
-
-if( kittenOneDesc.includes(descrSearchText) ) {
+if (kittenOneDesc.includes(descrSearchText)) {
   dataList.innerHTML += kittenOne;
-  } 
-  
-  
-  if( kittenTwoDesc.includes(descrSearchText) ) {
-    dataList.innerHTML += kittenTwo;
+}
+
+if (kittenTwoDesc.includes(descrSearchText)) {
+  dataList.innerHTML += kittenTwo;
+}
+
+if (kittenThreeDesc.includes(descrSearchText)) {
+  dataList.innerHTML += kittenThree;
+}
+
+const plusButton = document.querySelector(".js-plus");
+
+plusButton.addEventListener("click", () => {
+  if (newForm.classList.contains("collapsed")) {
+    newForm.classList.remove("collapsed");
+  } else {
+    newForm.classList.add("collapsed");
   }
-  
-  
-  if( kittenThreeDesc.includes(descrSearchText) ) {
-    dataList.innerHTML += kittenThree;
-  }  
+});
 
+const addButton = document.querySelector(".js-btn-add");
 
+const inputDesc = document.querySelector(".js-input-desc");
+const inputPhoto = document.querySelector(".js-input-photo");
+const inputName = document.querySelector(".js-input-name");
+const labelMesageError = document.querySelector(".js-label-error");
+
+const valueDesc = inputDesc.value;
+const valuePhoto = inputPhoto.value;
+const valueName = inputName.value;
+
+addButton.addEventListener("click", () => {
+  if (valueDesc === "" || valuePhoto === "" || valueName === "") {
+    labelMesageError.innerHTML = "Debe rellenar todos los valores";
+  }
+});
